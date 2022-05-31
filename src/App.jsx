@@ -1,11 +1,34 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import InputSample from "./InputSample";
+import React, { useEffect, useState } from "react";
+import styled from "styled-components";
+import { authService } from "./fBase";
+import AppRouter from "./components/AppRouter";
+
+const Loading = styled.div`
+  display: block;
+  text-align: center;
+`;
 
 function App() {
+  // console.log(authService.currentUser); -> null
+
+  const [init, setInit] = useState(false);
+  const [isLogIn, setIsLogIn] = useState(false);
+
+  // Login
+  useEffect(() => {
+    authService.onAuthStateChanged((user) => {
+      if (user) {
+        setIsLogIn(true);
+      } else {
+        setIsLogIn(false);
+      }
+      setInit(true);
+    });
+  });
   return (
-    <div className="App">
-      <InputSample />
-    </div>
+    <>
+      {init ? <AppRouter isLogIn={isLogIn} /> : <Loading>Loading...</Loading>}
+    </>
   );
 }
 
