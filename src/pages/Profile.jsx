@@ -1,14 +1,17 @@
 import React from "react";
 import styled from "styled-components";
+// Home으로 이동
 import { useNavigate } from "react-router-dom";
 import { authService } from "../fBase";
 
+// Box
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 `;
+// LogOut Btn
 const LogOut = styled.button`
   font-family: "Gugi", cursive;
   display: block;
@@ -17,6 +20,7 @@ const LogOut = styled.button`
   width: 300px;
   margin: 0 auto;
 `;
+
 function Profile() {
   const nav = useNavigate();
 

@@ -20,29 +20,42 @@ const HomeLink = styled.div`
   font-size: 2rem;
   padding: 1.5rem;
   color: #ffff;
+  @media (max-width: 700px) {
+    font-size: 1.5rem;
+  }
 `;
 
-// My Profile Navigation
+// Navigation
 const NavLink = styled.div`
   font-family: "Gugi", cursive;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.1rem;
-  padding: 0 1rem;
+  font-size: 24px;
+  padding: 0 5px;
   &:hover {
     text-decoration: underline;
   }
+  @media (max-width: 700px) {
+    font-size: 12px;
+  }
+  @media (max-width: 550px) {
+    font-size: 3px;
+  }
 `;
+// SignIn Link
 const SignLink = styled.div`
   font-family: "Gugi", cursive;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 0.5rem;
-  padding: 0 1rem;
+  padding: 0 0.5rem;
   &:hover {
     text-decoration: underline;
+  }
+  @media (max-width: 700px) {
+    font-size: 0.3rem;
   }
 `;
 
@@ -66,7 +79,7 @@ function Navigation() {
         </Link>
       </NavLink>
       <NavLink>
-        <Link to="/" style={{ color: "#fff", textDecoration: "none" }}>
+        <Link to="/country" style={{ color: "#fff", textDecoration: "none" }}>
           나라
         </Link>
       </NavLink>

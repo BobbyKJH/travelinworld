@@ -4,9 +4,12 @@ import { authService, firebaseInstance } from "../fBase";
 
 // 전체 박스
 const Container = styled.div`
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   margin: 0 auto;
   text-align: center;
+  overflow: hidden;
   border: 5px solid black;
   border-radius: 20px;
   width: 600px;
@@ -17,7 +20,7 @@ const Title = styled.h1`
   font-family: "Gugi", cursive;
   display: block;
   margin: 0;
-  margin-bottom: 80px;
+  margin-bottom: 50px;
   padding: 20px;
   color: #fff;
   background-color: #000;
@@ -32,7 +35,7 @@ const Input = styled.input`
   width: 350px;
   height: 30px;
   &:focus {
-    border: 3px solid #3d3d;
+    border: 5px solid #3d33dd;
   }
 `;
 
@@ -52,15 +55,17 @@ const OtherLogIn = styled.button`
   display: inline-block;
   font-family: "Gugi", cursive;
   box-sizing: border-box;
-  width: 150px;
+  border: none;
+  width: 50%;
   height: 30px;
 `;
 // 로그인 회원가입 선택 버튼 css
 const SelectSign = styled.button`
   font-family: "Gugi", cursive;
   display: block;
+  border: none;
   margin: 0 auto;
-  width: 200px;
+  width: 100%;
   height: 30px;
 `;
 
