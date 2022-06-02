@@ -7,7 +7,6 @@ const Container = styled.div`
   display: black;
   width: 99%;
   margin: 0 auto;
-  border: 5px solid aqua;
 `;
 
 function CountryPage() {

@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { olympic } from "../../store/mapSlice";
+// import { olympic } from "../../store/mapSlice";
 import styled from "styled-components";
 import Country from "./Country";
 // 전체 박스
 const Container = styled.div`
   display: block;
-  border: 2px solid black;
 `;
 // 버튼 구분
 const Btn = styled.div`
@@ -79,12 +78,16 @@ const CloesBtn = styled.button`
   font-family: "Gugi", cursive;
   display: block;
   color: #fff;
-  background-color: #000;
+  background-color: #000fff;
   border-radius: 20px;
   border: none;
   margin: 10px auto;
-  width: 200px;
+  width: 40%;
   height: 30px;
+  padding: 10px;
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 const CountryBtn = styled.button`
@@ -94,9 +97,16 @@ const CountryBtn = styled.button`
   border: none;
   display: inline-block;
   border-radius: 20px;
-  width: 150px;
+  width: 20%;
   padding: 10px;
   margin: 10px;
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+const CountryBox = styled.div`
+  /* background-color: #808080; */
+  /* opacity: 0.5; */
 `;
 
 function CountryList() {
@@ -174,7 +184,9 @@ function CountryList() {
             <CountryBtn onClick={Asia}>아시아</CountryBtn>
             <CountryBtn onClick={Oceania}>오세아니아</CountryBtn>
           </Btn>
-          <Country local={country} />
+          <CountryBox>
+            <Country local={country} />
+          </CountryBox>
         </>
       )}
     </Container>

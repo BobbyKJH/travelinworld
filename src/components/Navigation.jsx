@@ -89,7 +89,7 @@ function Navigation() {
         </Link>
       </NavLink>
       <NavLink>
-        <Link to="/" style={{ color: "#fff", textDecoration: "none" }}>
+        <Link to="/exchange" style={{ color: "#fff", textDecoration: "none" }}>
           환전
         </Link>
       </NavLink>

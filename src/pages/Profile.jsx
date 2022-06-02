@@ -15,10 +15,18 @@ const Container = styled.div`
 const LogOut = styled.button`
   font-family: "Gugi", cursive;
   display: block;
-  font-size: 2rem;
+  border: 5px solid black;
+  border-radius: 20px;
+  background-color: white;
+  font-size: 20px;
   padding: 20px;
   width: 300px;
   margin: 0 auto;
+  transition: 1s;
+  &:hover {
+    background-color: black;
+    color: white;
+  }
 `;
 
 function Profile() {

@@ -7,6 +7,7 @@ import CountryPage from "../pages/CountryPage";
 import Home from "../pages/Home";
 import Profile from "../pages/Profile";
 import Navigation from "./Navigation";
+import Exchange from "./exchange/Exchange";
 
 function AppRouter({ isLogIn }) {
   return (
@@ -18,7 +19,8 @@ function AppRouter({ isLogIn }) {
             <>
               <Route exact path="/" element={<Home />} />
               <Route exact path="/profile" element={<Profile />} />
-              <Route path="/country" element={<CountryPage />} />
+              <Route exact path="/country" element={<CountryPage />} />
+              <Route exact path="/exchange" element={<Exchange />} />
             </>
           ) : (
             <>
