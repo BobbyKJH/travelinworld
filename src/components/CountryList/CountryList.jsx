@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-// import { olympic } from "../../store/mapSlice";
 import styled from "styled-components";
 import Country from "./Country";
 // 전체 박스
@@ -94,14 +92,16 @@ const CountryBtn = styled.button`
   font-family: "Gugi", cursive;
   color: #fff;
   background-color: #000;
-  border: none;
-  display: inline-block;
+  display: block;
   border-radius: 20px;
   width: 20%;
   padding: 10px;
   margin: 10px;
   &:hover {
     text-decoration: underline;
+  }
+  @media (max-width: 1000px) {
+    font-size: 12px;
   }
 `;
 const CountryBox = styled.div`
@@ -110,11 +110,6 @@ const CountryBox = styled.div`
 `;
 
 function CountryList() {
-  const { show } = useSelector((state) => ({
-    show: state.map.show,
-  }));
-  const dispatch = useDispatch();
-
   const [btn, setBtn] = useState("flex");
   const [country, setCountry] = useState(null);
 
@@ -176,7 +171,9 @@ function CountryList() {
       {/* 국가 지도 */}
       {country && (
         <>
+          {/* 오륜기로 돌아가기 */}
           <CloesBtn onClick={Close}>오륜기</CloesBtn>
+          {/* 대륙 선택 */}
           <Btn>
             <CountryBtn onClick={EU}>유럽</CountryBtn>
             <CountryBtn onClick={Africa}>아프리카</CountryBtn>

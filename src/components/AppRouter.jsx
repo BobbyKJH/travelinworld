@@ -7,7 +7,8 @@ import CountryPage from "../pages/CountryPage";
 import Home from "../pages/Home";
 import Profile from "../pages/Profile";
 import Navigation from "./Navigation";
-import Exchange from "./exchange/Exchange";
+import ExchangePage from "../pages/ExchangePage";
+import CountryDetail from "./CountryList/CountryDetail";
 
 function AppRouter({ isLogIn }) {
   return (
@@ -17,10 +18,16 @@ function AppRouter({ isLogIn }) {
         <Routes>
           {isLogIn ? (
             <>
+              {/* 홈 */}
               <Route exact path="/" element={<Home />} />
               <Route exact path="/profile" element={<Profile />} />
+
+              {/* 대륙 나라 */}
               <Route exact path="/country" element={<CountryPage />} />
-              <Route exact path="/exchange" element={<Exchange />} />
+              <Route exact path="/country/:id" element={<CountryDetail />} />
+
+              {/* 환전 */}
+              <Route exact path="/exchange" element={<ExchangePage />} />
             </>
           ) : (
             <>

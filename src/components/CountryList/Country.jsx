@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 // 국가 박스
 const Map = styled.div`
   font-family: "Gugi", cursive;
   display: inline-block;
+  color: #000;
   overflow: hidden;
   width: 20%;
   height: 15%;
@@ -46,18 +48,21 @@ function Country({ local }) {
 
   useEffect(() => {
     fetch(local)
-      .then((response) => response.json())
+      .then((res) => res.json())
       .then((json) => {
         setCountry(json.data);
       });
   }, [country]);
+
   return (
     <div style={{ margin: "auto", textAlign: "center" }}>
       {country.map((map) => (
-        <Map key={map.country_nm}>
-          <Img src={map.download_url} alt={map.country_nm} />
-          <Name>{map.country_nm}</Name>
-        </Map>
+        <Link key={map.id} to={`/country/${map.id}`}>
+          <Map>
+            <Img src={map.download_url} alt={map.country_nm} />
+            <Name>{map.country_nm}</Name>
+          </Map>
+        </Link>
       ))}
     </div>
   );
