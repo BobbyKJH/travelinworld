@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
@@ -47,11 +48,10 @@ function Country({ local }) {
   const [country, setCountry] = useState([]);
 
   useEffect(() => {
-    fetch(local)
-      .then((res) => res.json())
-      .then((json) => {
-        setCountry(json.data);
-      });
+    axios.get(local).then((res) => {
+      setCountry(res.data.data);
+      console.log(res.data.data);
+    });
   }, [country]);
 
   return (

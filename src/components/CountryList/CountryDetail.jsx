@@ -13,9 +13,10 @@ const Btn = styled.button`
   color: #fff;
 `;
 function CountryDetail() {
-  const { id } = useParams();
+  const id = useParams();
   const nav = useNavigate();
   console.log(id);
+
   return (
     <div>
       {/* {country.map((map) =>()} */}
@@ -24,7 +25,7 @@ function CountryDetail() {
           nav("/country");
         }}
       >
-        오륜기{id}
+        오륜기
       </Btn>
     </div>
   );

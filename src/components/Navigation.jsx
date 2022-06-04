@@ -84,7 +84,10 @@ function Navigation() {
         </Link>
       </NavLink>
       <NavLink>
-        <Link to="/" style={{ color: "#fff", textDecoration: "none" }}>
+        <Link
+          to="/continents"
+          style={{ color: "#fff", textDecoration: "none" }}
+        >
           대륙
         </Link>
       </NavLink>

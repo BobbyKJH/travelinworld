@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
+import axios from "axios";
 
 const Container = styled.div`
   display: block;
@@ -86,12 +87,10 @@ function Exchange() {
   }
 
   useEffect(() => {
-    fetch("https://bobbykjh.github.io/exchange.json")
-      .then((res) => res.json())
-      .then((json) => {
-        setExchange(json.list);
-      });
-  }, [exchange]);
+    axios.get("https://bobbykjh.github.io/exchange.json").then((res) => {
+      setExchange(res.data.list);
+    });
+  }, []);
 
   useEffect(() => {
     setNum(1);

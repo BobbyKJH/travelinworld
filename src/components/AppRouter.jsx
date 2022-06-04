@@ -9,6 +9,7 @@ import Profile from "../pages/Profile";
 import Navigation from "./Navigation";
 import ExchangePage from "../pages/ExchangePage";
 import CountryDetail from "./CountryList/CountryDetail";
+import Continents from "./Continents/Continents";
 
 function AppRouter({ isLogIn }) {
   return (
@@ -25,6 +26,9 @@ function AppRouter({ isLogIn }) {
               {/* 대륙 나라 */}
               <Route exact path="/country" element={<CountryPage />} />
               <Route exact path="/country/:id" element={<CountryDetail />} />
+
+              {/* 대륙지도 */}
+              <Route exact path="/continents" element={<Continents />} />
 
               {/* 환전 */}
               <Route exact path="/exchange" element={<ExchangePage />} />

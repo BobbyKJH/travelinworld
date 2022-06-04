@@ -4,6 +4,8 @@ import Country from "./Country";
 // 전체 박스
 const Container = styled.div`
   display: block;
+  /* width: 100vw;
+  height: 100vh; */
 `;
 // 버튼 구분
 const Btn = styled.div`
@@ -175,7 +177,9 @@ function CountryList() {
           <CloesBtn onClick={Close}>오륜기</CloesBtn>
           {/* 대륙 선택 */}
           <Btn>
-            <CountryBtn onClick={EU}>유럽</CountryBtn>
+            <CountryBtn onClick={EU} name="eu">
+              유럽
+            </CountryBtn>
             <CountryBtn onClick={Africa}>아프리카</CountryBtn>
             <CountryBtn onClick={America}>아메리카</CountryBtn>
             <CountryBtn onClick={Asia}>아시아</CountryBtn>

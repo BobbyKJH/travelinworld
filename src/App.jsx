@@ -4,13 +4,16 @@ import { authService } from "./fBase";
 import AppRouter from "./components/AppRouter";
 
 const Loading = styled.div`
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  font-size: 48px;
+  height: 100vh;
+  width: 100vw;
 `;
 
 function App() {
-  // console.log(authService.currentUser); -> null
-
   const [init, setInit] = useState(false);
   const [isLogIn, setIsLogIn] = useState(false);
 
@@ -25,6 +28,7 @@ function App() {
       setInit(true);
     });
   });
+
   return (
     <>
       {init ? <AppRouter isLogIn={isLogIn} /> : <Loading>Loading...</Loading>}
