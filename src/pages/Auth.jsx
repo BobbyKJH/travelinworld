@@ -2,6 +2,14 @@ import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { authService, firebaseInstance } from "../fBase";
 
+const Total = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+`;
+
 // 전체 박스
 const Container = styled.div`
   display: flex;
@@ -138,48 +146,50 @@ function Auth() {
   }, []);
 
   return (
-    <Container>
-      <Title>Travel In World</Title>
-      {/* 로그인 창 */}
-      <form onSubmit={onSubmit}>
-        <Input
-          name="email"
-          type="email"
-          placeholder="Email"
-          required
-          value={email}
-          onChange={onChange}
-          ref={idRef}
-        />
-        {/* 패스워드 입력 */}
-        <Input
-          name="password"
-          type="password"
-          placeholder="Password"
-          required
-          value={password}
-          onChange={onChange}
-        />
-        {/* 로그인 회원가입 버튼 */}
-        <LogInBtn type="submit" value={newAccount ? "회원가입" : "로그인"} />
-        {error}
-      </form>
+    <Total>
+      <Container>
+        <Title>Travel In World</Title>
+        {/* 로그인 창 */}
+        <form onSubmit={onSubmit}>
+          <Input
+            name="email"
+            type="email"
+            placeholder="Email"
+            required
+            value={email}
+            onChange={onChange}
+            ref={idRef}
+          />
+          {/* 패스워드 입력 */}
+          <Input
+            name="password"
+            type="password"
+            placeholder="Password"
+            required
+            value={password}
+            onChange={onChange}
+          />
+          {/* 로그인 회원가입 버튼 */}
+          <LogInBtn type="submit" value={newAccount ? "회원가입" : "로그인"} />
+          {error}
+        </form>
 
-      {/* 깃헙 & 구글  */}
-      <div>
-        <OtherLogIn name="google" onClick={onSocailClick}>
-          Google
-        </OtherLogIn>
-        <OtherLogIn name="github" onClick={onSocailClick}>
-          Github
-        </OtherLogIn>
-      </div>
+        {/* 깃헙 & 구글  */}
+        <div>
+          <OtherLogIn name="google" onClick={onSocailClick}>
+            Google
+          </OtherLogIn>
+          <OtherLogIn name="github" onClick={onSocailClick}>
+            Github
+          </OtherLogIn>
+        </div>
 
-      {/* 로그인 & 회원가입 버튼 */}
-      <SelectSign onClick={Sign}>
-        {newAccount ? "로그인" : "회원가입"}
-      </SelectSign>
-    </Container>
+        {/* 로그인 & 회원가입 버튼 */}
+        <SelectSign onClick={Sign}>
+          {newAccount ? "로그인" : "회원가입"}
+        </SelectSign>
+      </Container>
+    </Total>
   );
 }
 

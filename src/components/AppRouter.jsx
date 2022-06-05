@@ -15,10 +15,12 @@ function AppRouter({ isLogIn }) {
   return (
     <Router>
       <Provider store={store}>
-        <Navigation />
+        {isLogIn && <Navigation />}
         <Routes>
           {isLogIn ? (
             <>
+              {/* <Navigation /> */}
+
               {/* 홈 */}
               <Route exact path="/" element={<Home />} />
               <Route exact path="/profile" element={<Profile />} />

@@ -24,6 +24,7 @@ const WorldImg = styled.img`
   margin: 0 auto;
   width: 50vw;
   height: 37vw;
+  /* 반응형 만들기 */
 `;
 
 const Continent = styled.div`
